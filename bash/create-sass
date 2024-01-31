@@ -1,0 +1,326 @@
+#!/bin/bash
+
+# Define the main folder and subfolders
+main_folder="styles"
+sub_folders=("abstracts" "base" "components" "layouts" "pages" "utilities" "themes" "vendors")
+
+# Create main folder
+mkdir -p "$main_folder"
+
+# Create subfolders
+for folder in "${sub_folders[@]}"; do
+    mkdir -p "$main_folder/$folder"
+done
+
+# main.scss with content
+# Storing sass code in a varible cause it is too long
+main_code=$(cat <<EOF
+// abstracts imports
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+// base imports
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+// components imports
+@import "components/btn";
+@import "components/nav";
+
+// layouts imports
+@import "layouts/footer";
+@import "layouts/header";
+
+// pages imports
+@import "pages/home";
+
+// themes imports
+
+// utilities imports
+
+// vendors imports
+
+EOF
+)
+
+# Writing the variable into the file
+echo -e "\n$main_code" >> "$main_folder/main.scss"
+
+
+# Create files inside "abstracts" folder
+# _functions.scss
+touch "$main_folder/abstracts/_functions.scss"
+
+# _variables.scss with content
+echo "// Variables" > "$main_folder/abstracts/_variables.scss"
+echo "// colors black and white" >> "$main_folder/abstracts/_variables.scss"
+echo "\$color-black: #000;" >> "$main_folder/abstracts/_variables.scss"
+echo "\$color-white: #fff;" >> "$main_folder/abstracts/_variables.scss"
+echo "// colors" >> "$main_folder/abstracts/_variables.scss"
+echo "\$color-grey-1: #eee;" >> "$main_folder/abstracts/_variables.scss"
+echo "\$color-grey-2: #d6d6d6;" >> "$main_folder/abstracts/_variables.scss"
+echo "\$color-grey-3: #333533;" >> "$main_folder/abstracts/_variables.scss"
+echo "\$color-grey-4: #202020;" >> "$main_folder/abstracts/_variables.scss"
+echo "" >> "$main_folder/abstracts/_variables.scss"
+echo "// font size" >> "$main_folder/abstracts/_variables.scss"
+echo "\$default-font-size: 1.6rem;" >> "$main_folder/abstracts/_variables.scss"
+echo "" >> "$main_folder/abstracts/_variables.scss"
+echo "// radius" >> "$main_folder/abstracts/_variables.scss"
+echo "\$default-radius: 1.5rem;" >> "$main_folder/abstracts/_variables.scss"
+echo "\$radius-small: 0.5rem;" >> "$main_folder/abstracts/_variables.scss"
+
+# _mixins.scss with content
+# Storing sass code in a varible cause it is too long
+mixins_code=$(cat << EOF 
+// bug fixing
+
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+// meadia query manager
+
+/*
+
+\$breakpoint argument choices:
+
+- phone
+- tab-port
+- tab-land
+- big-desk
+
+*/
+
+@mixin responsive(\$breakpoint) {
+    @if \$breakpoint==phone {
+        // 600px
+        @media (max-width: 37.5em) {
+            @content;
+        }
+    }
+
+    @if \$breakpoint==tab-port {
+        // 900px
+        @media (max-width: 56.25em) {
+            @content;
+        }
+    }
+
+    @if \$breakpoint==tab-land {
+        // 1200px
+        @media (max-width: 75em) {
+            @content;
+        }
+    }
+
+    @if \$breakpoint==big-desk {
+        // 1800px
+        @media (max-width: 112.5em) {
+            @content;
+        }
+    }
+}
+EOF
+)
+
+# Writing the variable into the file
+echo -e "\n$mixins_code" >> "$main_folder/abstracts/_mixins.scss"
+
+# Create files inside "base" folder
+# _animations.scss
+touch "$main_folder/base/_animations.scss"
+
+#_typography.scss
+touch "$main_folder/base/_typography.scss"
+
+# _utilities.scss with content
+# Storing sass code in a varible cause it is too long
+utilities_code=$(cat <<EOF
+// margins
+// small margin utils
+.u-margin-top-small {
+    margin-top: 3rem;
+}
+
+.u-margin-left-small {
+    margin-left: 3rem;
+}
+
+.u-margin-right-small {
+    margin-right: 3rem;
+}
+
+.u-margin-bottom-small {
+    margin-bottom: 3rem;
+}
+
+// medium margin utils
+.u-margin-top-medium {
+    margin-top: 5rem;
+}
+
+.u-margin-left-medium {
+    margin-left: 5rem;
+}
+
+.u-margin-right-medium {
+    margin-right: 5rem;
+}
+
+.u-margin-bottom-medium {
+    margin-bottom: 5rem;
+}
+
+// large margin utils
+.u-margin-top-large {
+    margin-top: 8rem;
+}
+
+.u-margin-left-large {
+    margin-left: 8rem;
+}
+
+.u-margin-right-large {
+    margin-right: 8rem;
+}
+
+.u-margin-bottom-large {
+    margin-bottom: 8rem;
+}
+
+// xlarge margin utils
+.u-margin-top-xl {
+    margin-top: 12rem;
+}
+
+.u-margin-left-xl {
+    margin-left: 12rem;
+}
+
+.u-margin-right-xl {
+    margin-right: 12rem;
+}
+
+.u-margin-bottom-xl {
+    margin-bottom: 12rem;
+}
+
+// paddings
+// small padding utils
+.u-padding-top-small {
+    padding-top: 3rem;
+}
+
+.u-padding-left-small {
+    padding-left: 3rem;
+}
+
+.u-padding-right-small {
+    padding-right: 3rem;
+}
+
+.u-padding-bottom-small {
+    padding-bottom: 3rem;
+}
+
+// medium padding utils
+.u-padding-top-medium {
+    padding-top: 5rem;
+}
+
+.u-padding-left-medium {
+    padding-left: 5rem;
+}
+
+.u-padding-right-medium {
+    padding-right: 5rem;
+}
+
+.u-padding-bottom-medium {
+    padding-bottom: 5rem;
+}
+
+// large padding utils
+.u-padding-top-large {
+    padding-top: 8rem;
+}
+
+.u-padding-left-large {
+    padding-left: 8rem;
+}
+
+.u-padding-right-large {
+    padding-right: 8rem;
+}
+
+.u-padding-bottom-large {
+    padding-bottom: 8rem;
+}
+
+// xlarge padding utils
+.u-padding-top-xl {
+    padding-top: 12rem;
+}
+
+.u-padding-left-xl {
+    padding-left: 12rem;
+}
+
+.u-padding-right-xl {
+    padding-right: 12rem;
+}
+
+.u-padding-bottom-xl {
+    padding-bottom: 12rem;
+}
+EOF
+)
+
+# Writing the variable into the file
+echo -e "\n$utilities_code" >> "$main_folder/base/_utilities.scss"
+
+
+# _base.scss with content
+echo "// Base" > "$main_folder/base/_base.scss"
+echo "/* Reset styles */" >> "$main_folder/base/_base.scss"
+echo "*" >> "$main_folder/base/_base.scss"
+echo "{" >> "$main_folder/base/_base.scss"
+echo "    padding: 0;" >> "$main_folder/base/_base.scss"
+echo "    margin: 0;" >> "$main_folder/base/_base.scss"
+echo "    box-sizing: border-box;" >> "$main_folder/base/_base.scss"
+echo "    -webkit-backface-visibility: hidden;" >> "$main_folder/base/_base.scss"
+echo "    backface-visibility: hidden;" >> "$main_folder/base/_base.scss"
+echo "}" >> "$main_folder/base/_base.scss"
+echo "" >> "$main_folder/base/_base.scss"
+echo "/* Root font size */" >> "$main_folder/base/_base.scss"
+echo "html {" >> "$main_folder/base/_base.scss"
+echo "    font-size: 62.5%;" >> "$main_folder/base/_base.scss"
+echo "}" >> "$main_folder/base/_base.scss"
+
+# Create files inside "components" folder
+# _btn.scss
+touch "$main_folder/components/_btn.scss"
+
+# _nav.scss
+touch "$main_folder/components/_nav.scss"
+
+# Create files inside "layouts" folder
+# _header.scss
+touch "$main_folder/layouts/_header.scss"
+
+# _footer.scss
+touch "$main_folder/layouts/_footer.scss"
+
+# Create files inside "pages" folder
+# _home.scss
+touch "$main_folder/pages/_home.scss"
+
+# Print a message
+echo "Sass folder structure with files created successfully."
