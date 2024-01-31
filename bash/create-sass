@@ -16,9 +16,9 @@ done
 # Storing sass code in a varible cause it is too long
 main_code=$(cat <<EOF
 // abstracts imports
+@import "abstracts/variables";
 @import "abstracts/functions";
 @import "abstracts/mixins";
-@import "abstracts/variables";
 
 // base imports
 @import "base/animations";
