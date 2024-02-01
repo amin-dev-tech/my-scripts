@@ -66,7 +66,7 @@ This bash script will clear the unnecessary files and edits the `App.jsx` file f
 
 ### Bash Scripts Usage
 
-Simply copy the desired script into `usr/local/bin` and rin the bashe command according to the script file name.
+Simply copy the desired script into `usr/local/bin` and run the bashe command according to the script file name.
 
 Example:
 
