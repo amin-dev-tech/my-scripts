@@ -28,7 +28,7 @@ main_code=$(cat <<EOF
 
 // components imports
 @import "components/btn";
-@import "components/nav";
+@import "components/header";
 
 // layouts imports
 @import "layouts/footer";
@@ -308,8 +308,8 @@ echo "}" >> "$main_folder/base/_base.scss"
 # _btn.scss
 touch "$main_folder/components/_btn.scss"
 
-# _nav.scss
-touch "$main_folder/components/_nav.scss"
+# _header.scss
+touch "$main_folder/components/_header.scss"
 
 # Create files inside "layouts" folder
 # _header.scss
