@@ -60,7 +60,7 @@ This bash script will clear the unnecessary files and edits the `App.jsx` file f
 - removing the `src/assets/react.svg` file
 - removing the `src/App.css` file
 - removing the `src/index.css` file
-- clearing the content of `App.jsx` and replace them with a started component
+- clearing the content of `App.jsx` and replace them with a starter component
 
 ## Usage
 
@@ -102,4 +102,4 @@ Your pull requests will be reviewed, and upon approval, they will be merged into
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-The MIT License is a permissive open-source license that allows you to use, modify, and distribute the code with very few restrictions. Feel free to incorporate these scripts into your projects and build upon them. If you have any questions about the license, please
+The MIT License is a permissive open-source license that allows you to use, modify, and distribute the code with very few restrictions. Feel free to incorporate these scripts into your projects and build upon them.
