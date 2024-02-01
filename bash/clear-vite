@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Use the current directory as the main folder
+main_folder="."
+
+# Use find to locate and delete .svg and .css files within subfolders
+find "$main_folder" -type f \( -name "*.svg" -o -name "*.css" \) -exec rm {} +
+
+# Replace the App.jsx content
+if [ -e "src/App.jsx" ]; then
+    cat <<EOF > "src/App.jsx"
+function App() {
+    return (
+        <h1>Welcome To My Application</h1>
+    )
+}
+
+export default App
+EOF
+echo "App.jsx file has been updated with new content."
+fi
+
+echo "All .svg and .css files inside subfolders in the current directory have been deleted."

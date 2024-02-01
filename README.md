@@ -8,7 +8,8 @@ A collection of useful scripts for various purposes, including automation and de
   - [Table of Contents](#table-of-contents)
   - [Description](#description)
     - [Bash Scripts Description](#bash-scripts-description)
-      - [create-sass](#create-sass)
+      - [1. create-sass](#1-create-sass)
+      - [2. clear-vite](#2-clear-vite)
   - [Usage](#usage)
     - [Bash Scripts Usage](#bash-scripts-usage)
   - [Folder Structure](#folder-structure)
@@ -22,7 +23,7 @@ This repository contains a set of scripts to streamline various tasks. The scrip
 
 ### Bash Scripts Description
 
-#### create-sass
+#### 1. create-sass
 
 This script will generate base SASS folder structure including the necessary `.sass` files with a basic SASS code inside each for a SASS project.
 
@@ -50,6 +51,16 @@ The script will generate the following structure:
   - **`utilities/`**
   - **`vendors/`**
   - **`main.scss`**
+
+#### 2. clear-vite
+
+This bash script will clear the unnecessary files and edits the `App.jsx` file for a clean starter template. The changes include:
+
+- removing the `public/vite.svg` file
+- removing the `src/assets/react.svg` file
+- removing the `src/App.css` file
+- removing the `src/index.css` file
+- clearing the content of `App.jsx` and replace them with a started component
 
 ## Usage
 
