@@ -10,6 +10,7 @@ A collection of useful scripts for various purposes, including automation and de
     - [Bash Scripts Description](#bash-scripts-description)
       - [1. create-sass](#1-create-sass)
       - [2. clear-vite](#2-clear-vite)
+      - [3. create-deploy](#3-create-deploy)
   - [Usage](#usage)
     - [Bash Scripts Usage](#bash-scripts-usage)
   - [Folder Structure](#folder-structure)
@@ -61,6 +62,16 @@ This bash script will clear the unnecessary files and edits the `App.jsx` file f
 - removing the `src/App.css` file
 - removing the `src/index.css` file
 - clearing the content of `App.jsx` and replace them with a starter component
+
+#### 3. create-deploy
+
+This bash script will create the necessary files and folders require to deploy a vite project on GitHub. The script will add the following:
+
+- **`.github/`**
+  - **`workflows/`**
+    - **`deploy.yml`**
+
+Note thath the `deploy.yml` file contains all the required job codes for deployment.
 
 ## Usage
 
