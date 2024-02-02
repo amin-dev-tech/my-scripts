@@ -311,16 +311,18 @@ touch "$main_folder/components/_btn.scss"
 # _header.scss
 touch "$main_folder/components/_header.scss"
 
-# Create files inside "layouts" folder
-# _header.scss
-touch "$main_folder/layouts/_header.scss"
-
 # _footer.scss
-touch "$main_folder/layouts/_footer.scss"
+touch "$main_folder/components/_footer.scss"
 
 # Create files inside "pages" folder
 # _home.scss
 touch "$main_folder/pages/_home.scss"
+
+# _main.scss
+touch "$main_folder/pages/_main.scss"
+
+# _error.scss
+touch "$main_folder/pages/_error.scss"
 
 # Print a message
 echo "Sass folder structure with files created successfully."

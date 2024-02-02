@@ -43,11 +43,13 @@ The script will generate the following structure:
   - **`components/`**
     - **`_btn.scss_`**
     - **`_nav.scss`**
-  - **`layouts/`**
     - **`_footer.scss`**
     - **`_header.scss`**
   - **`pages/`**
     - **`_home.scss`**
+    - **`_main.scss`**
+    - **`_error.scss`**
+  - **`layouts/`**
   - **`themes/`**
   - **`utilities/`**
   - **`vendors/`**
